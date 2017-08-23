@@ -30,12 +30,12 @@ public class TopPacks {
             System.out.println("1:Search\n2:Import\n3:TopPacks\n4:Exit");
             j = scan.nextInt();
             if (j == 1) {
-                String searchOutput;
                 scan.nextLine();
                 System.out.println("\nEnter the keyword");
                 String keyword = scan.nextLine();
+                String searchOutput;
                 try {
-                    searchOutput = search(keyword);
+                    searchOutput = searchRepositories(keyword);
                 } catch (NullPointerException e) {
                     searchOutput = "";
                     System.out.println(e.getMessage());
@@ -62,52 +62,59 @@ public class TopPacks {
                 }
             }
             else if (j == 3) {
-                Map<String, Integer> occurrences = new HashMap<>();
-                String[] splitWords = (arrayToppacks.toString()).split(",\n");
-                for (String word : splitWords) {
-                    Integer oldCount = occurrences.get(word);
-                    if (oldCount == null) {
-                        oldCount = 0;
-                    }
-                    occurrences.put(word, oldCount + 1);
-                }
-                String[] topPackages = topPacks(occurrences);
-                if (topPackages != null) {
-                    int packageLength = topPackages.length;
-                    if (packageLength > 10)
-                        packageLength = 10;
-                    try (PrintStream out = new PrintStream(new FileOutputStream("TopPacks.txt"))) {
-                        for (int i = 0; i < packageLength; i++) {
-                            if (i == 0)
-                                out.append("Top Packs\n\n");
-                            out.append(topPackages[i]);
-                            out.append("\n");
-                            System.out.println(topPackages[i]);
-                        }
-                        System.out.println();
-                    } catch (IOException e) {
-                        e.getMessage();
-                    }
-                } else {
-                    System.out.println("No package.json files found.");
-                }
+                String topPackages = getTopPacks();
+                System.out.println(topPackages);
             }
         }while(j<4);
     }
-    private static String search(String keyword) {
+    private static String getTopPacks(){
+        Map<String, Integer> occurrences = new HashMap<>();
+        String[] splitWords = (arrayToppacks.toString()).split(",\n");
+        for (String word : splitWords) {
+            Integer oldCount = occurrences.get(word);
+            if (oldCount == null) {
+                oldCount = 0;
+            }
+            occurrences.put(word, oldCount + 1);
+        }
+        String[] topPackages = sortPackages(occurrences);
+        StringBuffer topTen = new StringBuffer();
+        if (topPackages != null) {
+            int packageLength = topPackages.length;
+            if (packageLength > 10)
+                packageLength = 10;
+            try (PrintStream out = new PrintStream(new FileOutputStream("TopPacks.txt"))) {
+                for (int i = 0; i < packageLength; i++) {
+                    if (i == 0)
+                        out.append("Top Packs\n\n");
+                    out.append(topPackages[i]);
+                    out.append("\n");
+                    topTen.append(topPackages[i]).append("\n");
+                }
+                System.out.println();
+                return topTen.toString();
+            } catch (IOException e) {
+                e.getMessage();
+                return null;
+            }
+        } else {
+            return "No package.json files found. ";
+        }
+    }
+    private static String searchRepositories(String keyword) {
         String url = "https://api.github.com/search/repositories?q=" + keyword + "&sort=stars&order=desc";
         TopPacks example = new TopPacks();
         String response = example.run(url);
         JSONParser parser = new JSONParser();
         try {
-            JSONObject jsonObject = (JSONObject) parser.parse(response);
-            JSONArray jsonArray = (JSONArray) jsonObject.get("items");
-            StringBuilder result = new StringBuilder();
-            for (int i = 0 ; i < jsonArray.size() ;i++) {
-                JSONObject item = (JSONObject) jsonArray.get(i);
-                result.append(getData(item));
+            JSONObject jsonResponse = (JSONObject) parser.parse(response);
+            JSONArray repositoryList = (JSONArray) jsonResponse.get("items");
+            StringBuilder searchResult = new StringBuilder();
+            for (int i = 0 ; i < repositoryList.size() ;i++) {
+                JSONObject item = (JSONObject) repositoryList.get(i);
+                searchResult.append(getData(item));
             }
-            return result.toString();
+            return searchResult.toString();
         }
         catch (Exception e){
             System.out.println(e.getMessage());
@@ -126,30 +133,30 @@ public class TopPacks {
         String u = getDetails(id);
         String url = "https://api.github.com/repos/"+u+"/contents/package.json";
         String packageJsonContent;
-        JSONObject packageJsonObjects;
-        JSONObject jsonObject;
+        JSONObject packageJsonItems;
+        JSONObject jsonResponse;
         JSONObject packages;
         StringBuffer packagesArray = new StringBuffer();
         TopPacks example = new TopPacks();
         JSONParser parser = new JSONParser();
         String response = example.run(url);
         try {
-            jsonObject = (JSONObject) parser.parse(response);
+            jsonResponse = (JSONObject) parser.parse(response);
         }
         catch (ParseException e){
-            jsonObject = null;
+            jsonResponse = null;
             System.out.println(e.getMessage());
         }
-        String downloadUrl = (String) jsonObject.get("download_url");
+        String downloadUrl = (String) jsonResponse.get("download_url");
         packageJsonContent =  example.run(downloadUrl);
         try {
-            packageJsonObjects = (JSONObject) parser.parse(packageJsonContent);
+            packageJsonItems = (JSONObject) parser.parse(packageJsonContent);
         }
         catch (ParseException e){
             System.out.println(e.getMessage());
-            packageJsonObjects = null;
+            packageJsonItems = null;
         }
-        packages= (JSONObject) packageJsonObjects.get("dependencies");
+        packages= (JSONObject) packageJsonItems.get("dependencies");
         Set<String > packageNames = packages.keySet();
         for(String ls:packageNames){
             packagesArray.append(ls);
@@ -163,10 +170,10 @@ public class TopPacks {
         try {
             String response = example.run(url);
             JSONParser parser = new JSONParser();
-            JSONObject json = (JSONObject) parser.parse(response);
-            String name = (String)json.get("name");
-            JSONObject owner_obj = (JSONObject) json.get("owner");
-            String owner = (String)owner_obj.get("login");
+            JSONObject jsonResponse = (JSONObject) parser.parse(response);
+            String name = (String)jsonResponse.get("name");
+            JSONObject ownerObj = (JSONObject) jsonResponse.get("owner");
+            String owner = (String)ownerObj.get("login");
             return owner+"/"+name;
         }
         catch (ParseException e){
@@ -174,12 +181,12 @@ public class TopPacks {
             return "";
         }
     }
-    private static String[] topPacks(Map occurrences){
+    private static String[] sortPackages(Map occurrences){
 
         ValueComparator valueComparator = new ValueComparator(occurrences);
-        TreeMap<String, Integer> sorted_map = new TreeMap<>(valueComparator);
-        sorted_map.putAll(occurrences);
-        String sorted4 = sorted_map.entrySet().toString();
+        TreeMap<String, Integer> sortedMap = new TreeMap<>(valueComparator);
+        sortedMap.putAll(occurrences);
+        String sorted4 = sortedMap.entrySet().toString();
         String sorted2 = sorted4.replace(" ","");
         String sorted1 = sorted2.replace("[","");
         String sorted = sorted1.replace("]","");
