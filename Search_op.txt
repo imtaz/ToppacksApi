@@ -1,0 +1,180 @@
+
+Name : ABCalendarPicker
+Owner Name: k06a
+Star Count : 747
+Fork Count: 124
+
+
+Name : ABCustomUINavigationController
+Owner Name: andresbrun
+Star Count : 519
+Fork Count: 79
+
+
+Name : dockerflix
+Owner Name: trick77
+Star Count : 296
+Fork Count: 42
+
+
+Name : ABContactHelper
+Owner Name: erica
+Star Count : 290
+Fork Count: 96
+
+
+Name : RABCDAsm
+Owner Name: CyberShadow
+Star Count : 286
+Fork Count: 66
+
+
+Name : abcjs
+Owner Name: paulrosen
+Star Count : 265
+Fork Count: 59
+
+
+Name : ABCIntroView
+Owner Name: AdamBCo
+Star Count : 250
+Fork Count: 47
+
+
+Name : JoliTypo
+Owner Name: jolicode
+Star Count : 234
+Fork Count: 12
+
+
+Name : ABCD-Animal-Book
+Owner Name: marvindanig
+Star Count : 227
+Fork Count: 31
+
+
+Name : abcweb
+Owner Name: volatiletech
+Star Count : 217
+Fork Count: 7
+
+
+Name : apparat
+Owner Name: joa
+Star Count : 212
+Fork Count: 51
+
+
+Name : bitcoin-abc
+Owner Name: Bitcoin-ABC
+Star Count : 151
+Fork Count: 74
+
+
+Name : PySynth
+Owner Name: mdoege
+Star Count : 140
+Fork Count: 29
+
+
+Name : abc
+Owner Name: juliancwirko
+Star Count : 134
+Fork Count: 50
+
+
+Name : Alphabet-Blocks
+Owner Name: insurgentgames
+Star Count : 106
+Fork Count: 58
+
+
+Name : polyglot
+Owner Name: untra
+Star Count : 99
+Fork Count: 13
+
+
+Name : RatioMaster.NET
+Owner Name: NikolayIT
+Star Count : 95
+Fork Count: 28
+
+
+Name : abc
+Owner Name: rklaehn
+Star Count : 82
+Fork Count: 7
+
+
+Name : fonts
+Owner Name: opensourcedesign
+Star Count : 82
+Fork Count: 13
+
+
+Name : ABCGooglePlacesAutocomplete
+Owner Name: AdamBCo
+Star Count : 77
+Fork Count: 12
+
+
+Name : abci
+Owner Name: tendermint
+Star Count : 68
+Fork Count: 29
+
+
+Name : musical.js
+Owner Name: PencilCode
+Star Count : 55
+Fork Count: 7
+
+
+Name : p2abcengine
+Owner Name: p2abcengine
+Star Count : 52
+Fork Count: 20
+
+
+Name : ABCDEFGHPPP
+Owner Name: mingchuno
+Star Count : 45
+Fork Count: 41
+
+
+Name : strsim-rs
+Owner Name: dguo
+Star Count : 45
+Fork Count: 8
+
+
+Name : plugin.video.abc_iview
+Owner Name: xbmc-catchuptv-au
+Star Count : 44
+Fork Count: 16
+
+
+Name : mergepdfs
+Owner Name: paultopia
+Star Count : 42
+Fork Count: 1
+
+
+Name : abc-functional-javascript
+Owner Name: indongyoo
+Star Count : 41
+Fork Count: 7
+
+
+Name : sample-abcs-writer
+Owner Name: appcelerator-archive
+Star Count : 40
+Fork Count: 12
+
+
+Name : ABCNN
+Owner Name: galsang
+Star Count : 38
+Fork Count: 18
+
