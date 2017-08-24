@@ -30,24 +30,12 @@ public class TopPacks {
             j = scan.nextInt();
             if (j == 1) {
                 scan.nextLine();
-                System.out.println("\nEnter the keyword");
-                String keyword = scan.nextLine();
-                String searchOutput;
-                try {
-                    searchOutput = searchRepositories(keyword);
-                } catch (NullPointerException e) {
-                    searchOutput = "";
-                    System.out.println(e.getMessage());
-                }
+                String searchOutput = searchRepositories();
                 System.out.println(searchOutput);
             }
             else if (j == 2) {
-                scan.nextLine();
-                System.out.println("\nEnter the id of the repository");
-                Long id = scan.nextLong();
-                String importedPackages;
                 try {
-                    importedPackages = importContent(id);
+                    String importedPackages = importContent();
                     arrayToppacks.append(importedPackages);
                     System.out.println(importedPackages+"\n");
                 }
@@ -95,7 +83,10 @@ public class TopPacks {
             return "No package.json files found. ";
         }
     }
-    private static String searchRepositories(String keyword) {
+    private static String searchRepositories() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\nEnter the keyword");
+        String keyword = scan.nextLine();
         String url = "https://api.github.com/search/repositories?q=" + keyword + "&sort=stars&order=desc";
         TopPacks example = new TopPacks();
         String response = example.run(url);
@@ -123,7 +114,10 @@ public class TopPacks {
         String ownerName = (String)ownerObject.get("login");
         return ("\nName : " + name + "\nOwner Name: " + ownerName + "\nStar Count : " + starCount + "\nFork Count: " + forkCount + "\n\n");
     }
-    private static String importContent(Long id){
+    private static String importContent(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\nEnter the id of the repository");
+        Long id = scan.nextLong();
         String u = getDetails(id);
         String url = "https://api.github.com/repos/"+u+"/contents/package.json";
         String packageJsonContent;
