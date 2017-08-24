@@ -39,12 +39,7 @@ public class TopPacks {
                     searchOutput = "";
                     System.out.println(e.getMessage());
                 }
-                try (PrintStream out = new PrintStream(new FileOutputStream("Search_op.txt"))) {
-                    out.append(searchOutput);
-                    System.out.println(searchOutput+"\n");
-                } catch (IOException e) {
-                    System.out.println(e.getMessage());
-                }
+                System.out.println(searchOutput);
             }
             else if (j == 2) {
                 scan.nextLine();
