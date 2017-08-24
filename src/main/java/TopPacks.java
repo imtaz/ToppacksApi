@@ -12,8 +12,8 @@ import org.json.simple.parser.ParseException;
 
 public class TopPacks {
     private static StringBuffer arrayToppacks = new StringBuffer();
-    private OkHttpClient client = new OkHttpClient();
-    private String run(String url){
+    private String getUrlData(String url){
+        OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().url(url).build();
         try (Response response = client.newCall(request).execute()) {
             return response.body().string();
@@ -56,14 +56,14 @@ public class TopPacks {
         String keyword = scan.nextLine();
         String url = "https://api.github.com/search/repositories?q=" + keyword + "&sort=stars&order=desc";
         TopPacks example = new TopPacks();
-        String response = example.run(url);
+        String response = example.getUrlData(url);
         JSONParser parser = new JSONParser();
         try {
             JSONObject jsonResponse = (JSONObject) parser.parse(response);
             JSONArray repositoryList = (JSONArray) jsonResponse.get("items");
             StringBuilder searchResult = new StringBuilder();
-            for (int i = 0 ; i < repositoryList.size() ;i++) {
-                JSONObject item = (JSONObject) repositoryList.get(i);
+            for (Object aRepositoryList : repositoryList) {
+                JSONObject item = (JSONObject) aRepositoryList;
                 searchResult.append(getData(item));
             }
             return searchResult.toString();
@@ -94,7 +94,7 @@ public class TopPacks {
         StringBuffer packagesArray = new StringBuffer();
         TopPacks example = new TopPacks();
         JSONParser parser = new JSONParser();
-        String response = example.run(url);
+        String response = example.getUrlData(url);
         try {
             jsonResponse = (JSONObject) parser.parse(response);
         }
@@ -103,7 +103,7 @@ public class TopPacks {
             System.out.println(e.getMessage());
         }
         String downloadUrl = (String) jsonResponse.get("download_url");
-        packageJsonContent =  example.run(downloadUrl);
+        packageJsonContent =  example.getUrlData(downloadUrl);
         try {
             packageJsonItems = (JSONObject) parser.parse(packageJsonContent);
         }
@@ -123,15 +123,14 @@ public class TopPacks {
         String url = "https://api.github.com/repositories/"+id;
         TopPacks example = new TopPacks();
         try {
-            String response = example.run(url);
+            String response = example.getUrlData(url);
             JSONParser parser = new JSONParser();
             JSONObject jsonResponse = (JSONObject) parser.parse(response);
             String name = (String)jsonResponse.get("name");
             JSONObject ownerObj = (JSONObject) jsonResponse.get("owner");
             String owner = (String)ownerObj.get("login");
             return owner+"/"+name;
-        }
-        catch (ParseException e){
+        } catch (ParseException e){
             System.out.println(e.getMessage());
             return "";
         }
