@@ -42,11 +42,11 @@ public class TopPacks {
                 catch (Exception e){
                     System.out.println(e.getMessage());
                 }
-            }/*
+            }
             else if (j == 3) {
                 String topPackages = getTopPacks();
                 System.out.println(topPackages);
-            } */
+            }
         }while(j<4);
     }
 
