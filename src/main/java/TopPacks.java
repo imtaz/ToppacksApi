@@ -49,40 +49,7 @@ public class TopPacks {
             }
         }while(j<4);
     }
-    private static String getTopPacks(){
-        Map<String, Integer> occurrences = new HashMap<>();
-        String[] splitWords = (arrayToppacks.toString()).split(",\n");
-        for (String word : splitWords) {
-            Integer oldCount = occurrences.get(word);
-            if (oldCount == null) {
-                oldCount = 0;
-            }
-            occurrences.put(word, oldCount + 1);
-        }
-        String[] topPackages = sortPackages(occurrences);
-        StringBuffer topTen = new StringBuffer();
-        if (topPackages != null) {
-            int packageLength = topPackages.length;
-            if (packageLength > 10)
-                packageLength = 10;
-            try (PrintStream out = new PrintStream(new FileOutputStream("TopPacks.txt"))) {
-                for (int i = 0; i < packageLength; i++) {
-                    if (i == 0)
-                        out.append("Top Packs\n\n");
-                    out.append(topPackages[i]);
-                    out.append("\n");
-                    topTen.append(topPackages[i]).append("\n");
-                }
-                System.out.println();
-                return topTen.toString();
-            } catch (IOException e) {
-                e.getMessage();
-                return null;
-            }
-        } else {
-            return "No package.json files found. ";
-        }
-    }
+
     private static String searchRepositories() {
         Scanner scan = new Scanner(System.in);
         System.out.println("\nEnter the keyword");
@@ -167,6 +134,40 @@ public class TopPacks {
         catch (ParseException e){
             System.out.println(e.getMessage());
             return "";
+        }
+    }
+    private static String getTopPacks(){
+        Map<String, Integer> occurrences = new HashMap<>();
+        String[] splitWords = (arrayToppacks.toString()).split(",\n");
+        for (String word : splitWords) {
+            Integer oldCount = occurrences.get(word);
+            if (oldCount == null) {
+                oldCount = 0;
+            }
+            occurrences.put(word, oldCount + 1);
+        }
+        String[] topPackages = sortPackages(occurrences);
+        StringBuffer topTen = new StringBuffer();
+        if (topPackages != null) {
+            int packageLength = topPackages.length;
+            if (packageLength > 10)
+                packageLength = 10;
+            try (PrintStream out = new PrintStream(new FileOutputStream("TopPacks.txt"))) {
+                for (int i = 0; i < packageLength; i++) {
+                    if (i == 0)
+                        out.append("Top Packs\n\n");
+                    out.append(topPackages[i]);
+                    out.append("\n");
+                    topTen.append(topPackages[i]).append("\n");
+                }
+                System.out.println();
+                return topTen.toString();
+            } catch (IOException e) {
+                e.getMessage();
+                return null;
+            }
+        } else {
+            return "No package.json files found. ";
         }
     }
     private static String[] sortPackages(Map occurrences){
