@@ -13,7 +13,6 @@ import org.json.simple.parser.ParseException;
 public class TopPacks {
     private static StringBuffer arrayToppacks = new StringBuffer();
     private OkHttpClient client = new OkHttpClient();
-
     private String run(String url){
         Request request = new Request.Builder().url(url).build();
         try (Response response = client.newCall(request).execute()) {
@@ -191,10 +190,12 @@ public class TopPacks {
         String sorted1 = sorted2.replace("[","");
         String sorted = sorted1.replace("]","");
         String sortedPackages[] =  sorted.split(",");
-        if(sortedPackages[0].equals("=1"))
+        if(sortedPackages[0].equals("=1")){
             return null;
-        else
+        }
+        else {
             return sortedPackages;
+        }
     }
 }
 class ValueComparator implements Comparator<String> {
@@ -207,6 +208,6 @@ class ValueComparator implements Comparator<String> {
             return -1;
         } else {
             return 1;
-        } 
+        }
     }
 }
