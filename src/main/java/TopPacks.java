@@ -91,7 +91,7 @@ public class TopPacks {
         JSONObject packageJsonItems;
         JSONObject jsonResponse;
         JSONObject packages;
-        StringBuffer packagesArray = new StringBuffer();
+        StringBuilder packagesArray = new StringBuilder();
         TopPacks example = new TopPacks();
         JSONParser parser = new JSONParser();
         String response = example.getUrlData(url);
@@ -102,6 +102,7 @@ public class TopPacks {
             jsonResponse = null;
             System.out.println(e.getMessage());
         }
+        assert jsonResponse != null;
         String downloadUrl = (String) jsonResponse.get("download_url");
         packageJsonContent =  example.getUrlData(downloadUrl);
         try {
@@ -111,9 +112,10 @@ public class TopPacks {
             System.out.println(e.getMessage());
             packageJsonItems = null;
         }
+        assert packageJsonItems != null;
         packages= (JSONObject) packageJsonItems.get("dependencies");
-        Set<String > packageNames = packages.keySet();
-        for(String ls:packageNames){
+        Set packageNames = packages.keySet();
+        for(Object ls:packageNames){
             packagesArray.append(ls);
             packagesArray.append(",\n");
         }
@@ -146,7 +148,7 @@ public class TopPacks {
             occurrences.put(word, oldCount + 1);
         }
         String[] topPackages = sortPackages(occurrences);
-        StringBuffer topTen = new StringBuffer();
+        StringBuilder topTen = new StringBuilder();
         if (topPackages != null) {
             int packageLength = topPackages.length;
             if (packageLength > 10)
@@ -169,7 +171,7 @@ public class TopPacks {
             return "No package.json files found. ";
         }
     }
-    private static String[] sortPackages(Map occurrences){
+    private static String[] sortPackages(Map<String, Integer> occurrences){
 
         ValueComparator valueComparator = new ValueComparator(occurrences);
         TreeMap<String, Integer> sortedMap = new TreeMap<>(valueComparator);
@@ -188,10 +190,11 @@ public class TopPacks {
     }
 }
 class ValueComparator implements Comparator<String> {
-    Map<String, Integer> base;
-    public ValueComparator(Map<String, Integer> base) {
+    private Map<String, Integer> base;
+    ValueComparator(Map<String, Integer> base) {
         this.base = base;
     }
+    @Override
     public int compare(String a, String b) {
         if (base.get(a) > base.get(b)) {
             return -1;

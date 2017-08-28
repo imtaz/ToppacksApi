@@ -15,11 +15,19 @@
       <file leaf-file-name="TopPacks.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/TopPacks.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="204">
               <caret line="185" column="34" lean-forward="true" selection-start-line="185" selection-start-column="34" selection-end-line="185" selection-end-column="34" />
               <folding>
                 <element signature="e#7633#7634#0" expanded="true" />
                 <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <state relative-caret-position="402">
+              <caret line="199" column="22" lean-forward="true" selection-start-line="199" selection-start-column="22" selection-end-line="199" selection-end-column="22" />
+              <folding>
+                <element signature="e#7724#7725#0" expanded="true" />
+                <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
               </folding>
             </state>
           </provider>
@@ -230,7 +238,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="1603000" />
+=======
+    <option name="totallyTimeSpent" value="2029000" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1303" height="780" extended-state="6" />
@@ -325,8 +337,13 @@
         <state relative-caret-position="294">
           <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -336,8 +353,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -375,8 +397,13 @@
         <state relative-caret-position="294">
           <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -386,8 +413,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -432,8 +464,13 @@
         <state relative-caret-position="258">
           <caret line="16" column="65" lean-forward="true" selection-start-line="16" selection-start-column="65" selection-end-line="17" selection-end-column="29" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -443,8 +480,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -489,8 +531,13 @@
         <state relative-caret-position="294">
           <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -500,8 +547,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -539,8 +591,13 @@
         <state relative-caret-position="294">
           <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -550,8 +607,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -596,8 +658,13 @@
         <state relative-caret-position="294">
           <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -607,8 +674,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -653,8 +725,13 @@
         <state relative-caret-position="294">
           <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -664,8 +741,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
@@ -707,11 +789,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TopPacks.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="204">
           <caret line="185" column="34" lean-forward="true" selection-start-line="185" selection-start-column="34" selection-end-line="185" selection-end-column="34" />
           <folding>
             <element signature="e#7633#7634#0" expanded="true" />
             <element signature="e#7665#7666#0" expanded="true" />
+=======
+        <state relative-caret-position="402">
+          <caret line="199" column="22" lean-forward="true" selection-start-line="199" selection-start-column="22" selection-end-line="199" selection-end-column="22" />
+          <folding>
+            <element signature="e#7724#7725#0" expanded="true" />
+            <element signature="e#7756#7757#0" expanded="true" />
+>>>>>>> 2a244a8d177d1ff8f27a18a92eef32bebcc74541
           </folding>
         </state>
       </provider>
